@@ -1,0 +1,280 @@
+/* SETTINGS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eeeeee;
+}
+
+/* prettier-ignore */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+	color: rgb(100, 100, 100);
+}
+
+h1 {
+    font-size: 5.4rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+p {
+    font-size: 1.6rem;
+    color: rgb(61, 61, 61);
+    line-height: 1.4;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 1.4rem;
+}
+
+a {
+    position: relative;
+    font-size: 1.7rem;
+    color: #e6cdae;
+    text-decoration: none;
+    transition: color 0.4s;
+}
+
+a:hover,
+a:active {
+    color: #d28140;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1024px;
+    margin: auto;
+}
+
+/* HEADER - MENU */
+header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: inset 0px -4px 14px 18px rgba(20, 120, 20, 0.01);
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+nav {
+    margin-left: 4rem;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+}
+
+header ul li {
+    margin-right: 16px;
+}
+
+header ul li:last-child {
+    margin-right: 0px;
+}
+
+header li a {
+    font-size: 2.8rem;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 42px;
+    opacity: 0;
+    background-color: #e6cdae;
+    transition: color 0.4s, top 0.2s, opacity 0.4s linear;
+}
+
+nav a:hover::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 34px;
+    opacity: 1;
+    background-color: #d28140;
+}
+
+.login-button {
+    margin-left: auto;
+}
+
+/* MAIN CONTENT */
+.home-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-areas:
+        'header header aside'
+        'content-1 content-2 aside'
+        'footer footer footer';
+}
+
+.grid-header {
+    grid-area: header;
+    max-width: 60%;
+}
+
+.grid-header p {
+    margin-top: 20px;
+}
+
+.grid-content-one {
+    grid-area: content-1;
+    padding-right: 4rem;
+    margin-top: -10rem;
+}
+
+.grid-content-two {
+    grid-area: content-2;
+    padding-right: 6rem;
+    margin-top: -10rem;
+}
+
+.grid-aside {
+    grid-area: aside;
+}
+
+.grid-aside h2 {
+    margin-bottom: 2rem;
+}
+
+.grid-aside ol {
+    padding-left: 2.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.grid-footer {
+    grid-area: footer;
+    height: 10rem;
+}
+
+.grid-footer span {
+    display: block;
+    text-align: center;
+    margin-top: 8rem;
+    font-size: 2rem;
+}
+
+img {
+    max-width: 300px;
+}
+
+/* LOGIN PAGE */
+.login-grid {
+    grid-template-columns: unset;
+    grid-template-areas:
+        'login-header'
+        'form'
+        'footer';
+}
+
+.login-grid h2 {
+    grid-area: login-header;
+    text-transform: uppercase;
+}
+
+.login-grid form {
+    /* background-color: aqua; */
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid rgba(128, 128, 128, 0.267);
+    box-shadow: inset 0px -40px 50px 0px rgba(105, 105, 105, 0.09);
+}
+
+.login-grid form label {
+    color: #d28140;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+}
+
+.login-grid .text-size {
+    font-size: 1.8rem;
+}
+
+.login-grid form input {
+    height: 4rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #e6cdae;
+    background-color: #5c5c5c;
+    padding-left: 1rem;
+    text-shadow: 2px 2px 2px rgb(143, 86, 86);
+    border: none;
+    border-radius: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+.login-grid form input:focus {
+    background-color: #8f8e8e;
+}
+
+.btn-flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.login-grid form button {
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    background-color: #e6cdaeb0;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #d28240;
+    text-shadow: 1px 1px 4px gray;
+    transition: all 0.4s;
+}
+
+.login-grid form button:hover {
+    border: 2px solid rgba(219, 218, 127, 0.2);
+    background-color: #d28140;
+    color: #e6cdae;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.login-grid footer {
+    grid-area: login-footer;
+}
+
+@media (max-width: 1080px) {
+    .container {
+        padding: 0 5%;
+    }
+}
